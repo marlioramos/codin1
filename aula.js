@@ -47,8 +47,41 @@ var valorfinal = valorfinal = valor - (valor * (desconto / 100));
 console.log(`O produto no valor de 3.500 com desconto de 15% fica no total de ${valorfinal.toFixed(2)}`);
 
 
+//Imposto de renda
+let salarioBruto = 5000; // Salario
+let imposto; // Calculo do imposto de renda
 
-//Imposto de renda 
-//cvonversor de moedas 
-//conversor de temperatura para temperatura
-//
+// Definindo as alíquotas baseado no dia de hoje
+if (salarioBruto <= 2000) {
+ imposto = 0; // Isento
+} else if (salarioBruto <= 5000) {
+ imposto = salarioBruto * 0.15; // Se fo 15% maior
+} else {
+ imposto = salarioBruto * 0.25; // Se for 25% maior
+}
+
+console.log("O imposto de renda a ser pago é: R$ " + imposto.toFixed(2));
+
+
+//Conversor de moedas
+function converterMoeda(valor, taxaCambio){
+const valorConvertido = valor * taxaCambio;
+return (`R$ ${valor} é equivalente a $ ${valorConvertido.toFixed(2)}.`);
+}
+const valorEmReais = 100; // Valor em Reais
+const taxaCambio = 0.20; // Taxa de câmbio (1 REAL = 0.20 DOLAR AMERICANO)
+const resultado = converterMoeda(valorEmReais, taxaCambio);
+console.log(resultado);
+
+//Conversor de Celcius para Fahrenheit
+var temperaturaCelsius = 25; // Variável para a temperatura em Celsius que esta 25°
+var temperaturaFahrenheit = (temperaturaCelsius * 9/5) + 32; // Conversão para Fahrenheit
+console.log(`${temperaturaCelsius}°C é equivalente a ${temperaturaFahrenheit.toFixed(2)}°F.`);
+
+//Calculadora de IMC
+var peso = 70; // Peso em kg
+var alt = 1.75; // Altura em metros
+var imc = peso / (alt * alt); // Cálculo do IMC
+console.log("O IMC é: " + imc.toFixed(2));
+
+console.log ("FINALIZADO!")
